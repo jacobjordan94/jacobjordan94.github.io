@@ -1,0 +1,110 @@
+html{
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+body{
+	font-size: 36pt;
+	margin: 0;
+	background-color: #000;
+	color: #fff;
+}
+
+#wrapper{
+  	padding: 0;
+	margin: 0;
+}
+
+#content{
+	text-align: center;
+	width: 500px;
+	height:50%;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin:-100px 0 0 -250px;
+}
+
+#name{
+	color: #fff;
+}
+
+#links{
+	margin-top: 5%;
+	font-size: 12pt;
+}
+
+a{
+	text-decoration: none;
+	color: gray;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+a:link{
+
+}	
+
+a:visited{
+
+}
+
+a:hover{
+	color: #fff;
+}
+
+a:active{
+
+}
+
+.divider{
+	color: gray;
+	font-size: 12pt;
+}
+
+.shadow{
+  color: #4d4d4d;
+  color: white;
+  text-shadow: 1px 1px 0px #000, -1px -1px 0px #737373;
+}
+
+@-webkit-keyframes fadeIn { 
+	from { 
+		opacity:0; 
+	} 
+	to { 
+		opacity:1; 
+	} 
+}
+
+@-moz-keyframes fadeIn { 
+	from { 
+		opacity:0;
+	}
+	to { 
+		opacity:1; 
+	} 
+}
+
+@keyframes fadeIn { 
+	from { 
+		opacity:0; 
+	} 
+	to { 
+		opacity:1; 
+	} 
+}
+
+.fadein{
+	opacity: 0;
+	-webkit-animation:fadeIn ease-in 1; 
+	-moz-animation:fadeIn ease-in 1;
+	animation:fadeIn ease-in 1;
+
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+
+	-webkit-animation-duration: 4s;
+	-moz-animation-duration: 4s;
+	animation-duration: 4s;
+}
