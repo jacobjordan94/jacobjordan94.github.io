@@ -137,3 +137,32 @@ hr{
 	height: 1px; 
 	background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
 }
+
+#content{
+	/*background-color: red;*/
+	/*color: gray;*/
+	width: 80%;
+	margin: auto;
+	margin-top: 50px;
+	font-size: 12pt;
+	padding: 20px;
+	padding-top: 0px;
+	text-align: center;
+}
+
+.project{
+
+}
+
+.project-img{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	max-width: 512px;
+	max-height: 512px;
+}
+
+.project-desc{
+	color: gray;
+	max-width: 512px;
+	margin: auto;
+}
