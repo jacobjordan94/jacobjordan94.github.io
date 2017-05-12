@@ -1,25 +1,18 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var Snow;
 (function (Snow) {
     var Game = (function (_super) {
         __extends(Game, _super);
         function Game() {
-            var _this = this;
             var x = window.innerWidth;
             var y = window.innerHeight;
-            _this = _super.call(this, x, y, Phaser.AUTO, 'content', null) || this;
-            _this.state.add('Scene', Snow.Scene, null);
-            _this.state.start('Scene');
-            return _this;
+            _super.call(this, x, y, Phaser.AUTO, 'content', null);
+            this.state.add('Scene', Snow.Scene, null);
+            this.state.start('Scene');
         }
         return Game;
     }(Phaser.Game));
@@ -33,13 +26,12 @@ var Snow;
     var Scene = (function (_super) {
         __extends(Scene, _super);
         function Scene() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.snowflakes = [];
-            _this.tick = 0;
-            return _this;
+            _super.apply(this, arguments);
+            this.snowflakes = [];
+            this.tick = 0;
         }
         Scene.prototype.preload = function () {
-            this.load.image('sf', 'assets/sf.png');
+            this.load.image('sf', 'build/assets/sf.png');
         };
         Scene.prototype.create = function () {
             this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -71,21 +63,20 @@ var Snow;
     var Snowflake = (function (_super) {
         __extends(Snowflake, _super);
         function Snowflake(game, x, y, spriteKey) {
-            var _this = _super.call(this, game, x, y, spriteKey) || this;
-            _this.anchorVals = [
+            _super.call(this, game, x, y, spriteKey);
+            this.anchorVals = [
                 0.5, 0.55, 0.6,
                 0.65, 0.7, 0.75,
                 0.8, 0.85, 0.9,
                 0.95, 1
             ];
-            _this.game = game;
-            _this.game.add.existing(_this);
-            _this.game.physics.enable(_this, Phaser.Physics.ARCADE);
-            _this.angle = _this.randomNum(-180, 180);
-            var anchor = _this.anchorVals[_this.randomNum(0, _this.anchorVals.length - 1)];
-            _this.anchor.set(anchor, anchor);
-            _this.setVars();
-            return _this;
+            this.game = game;
+            this.game.add.existing(this);
+            this.game.physics.enable(this, Phaser.Physics.ARCADE);
+            this.angle = this.randomNum(-180, 180);
+            var anchor = this.anchorVals[this.randomNum(0, this.anchorVals.length - 1)];
+            this.anchor.set(anchor, anchor);
+            this.setVars();
         }
         Snowflake.prototype.update = function () {
             this.angle += this.angleV;

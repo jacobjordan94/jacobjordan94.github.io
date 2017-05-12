@@ -5,7 +5,7 @@ module Snow {
         tick: number = 0;
         
         preload() : void {
-            this.load.image('sf', 'assets/sf.png');
+            this.load.image('sf', 'build/assets/sf.png');
         }
         
         create() : void {
